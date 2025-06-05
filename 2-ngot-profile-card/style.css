@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Sen:wght@400..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --img-border-color: black;
+    --card-background-color: #FAF3EB;
+    --name-font: 'Sen';
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #306279, #B69E84);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--name-font);
+}
+
+.card {
+    height: 400px;
+    width: 300px;
+    background: var(--card-background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 15px;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    /* transition: all 0.5s; */
+    transition: border-radius 0.5s ease-in-out;
+    will-change: transform, width, height;
+}
+
+.card__img {
+    width: 120px;
+    height: 120px;
+    border: 4px solid var(--img-border-color);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    /* transition: all ease 0.5s; */
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, transform 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+    transform: translateY(25px) translateZ(0);
+    backface-visibility: hidden;
+    border: none;
+    will-change: transform, width, height;
+}
+
+
+h2 {
+    font-family: var(--name-font);
+    margin-top: 40px;
+    transition: margin-top 1s ease;
+    
+}
+
+p {
+    /* margin-bottom: 5px; */
+}
+
+.card__social {
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+.card__social a {
+    margin: 0 20px;
+    font-size: 20px;
+    color: black;
+    transition: 0.5s ease;
+}
+
+.card__social a:hover {
+    color: #A78B6F;
+}
+
+.fa-brands {
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    border: solid 2px;
+    background: transparent;
+    transition: 0.5s;
+    font-family: inherit;
+}
+
+.card__button:hover {
+    background: #A78B6F; /* Nâu be tối hơn #B69E84 */
+    color: white;
+    border-color: #A78B6F;
+    cursor: pointer;
+  }
+
+.card__img:hover {
+    width: 100%;
+    height: 100%;
+    transform: unset;
+    border: none;
+    border-radius: 10px;
+    overflow: unset;
+    transition:  0.5s;
+}
+
+img:hover {
+    border-radius: 10.5px;
+    transition: border-radius 0.5s ease-in-out;
+
+}
+
+.card__img:hover ~ h2 {
+    margin-top: 20px;
+    transition: margin-top 0.5s ease-in-out;
+}
